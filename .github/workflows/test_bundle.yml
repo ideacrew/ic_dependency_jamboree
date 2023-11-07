@@ -1,5 +1,7 @@
 name: Test Bundler
-on: push
+on: 
+  workflow_dispatch:
+  push:
 
 jobs:
   test-bundler:
