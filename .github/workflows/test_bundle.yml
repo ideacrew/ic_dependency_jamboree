@@ -2,6 +2,14 @@ name: Test Bundler
 on: 
   workflow_dispatch:
   push:
+  repository_dispatch:
+    branches:
+      - trunk
+    types:
+      - aca_entities_update
+      - acapi_update
+      - event_source_update
+      - resource_registry_update
 
 jobs:
   test-bundler-base:
