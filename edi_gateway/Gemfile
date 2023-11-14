@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# gem "rails"
+gem 'aca_entities',  git:  'https://github.com/ideacrew/aca_entities.git', branch: 'trunk'
+gem 'event_source',  git:  'https://github.com/ideacrew/event_source.git', branch: 'trunk'
+gem 'resource_registry',  git:  'https://github.com/ideacrew/resource_registry.git', branch: 'trunk'
+gem 'aca_x12_entities', git: "https://github.com/ideacrew/aca_x12_entities.git", branch: "trunk"
+
+# Dependencies from EDI Gateway Gemfile
+gem 'dry-container',       '0.7.2'
+gem 'dry-schema',          '~> 1.6.2'
+gem 'dry-types',           '~> 1.5.1'
+gem 'dry-validation',      '~> 1.6.0'
+
+gem "rails", "~> 7.0.7.2"
+
+gem 'keepr', '~> 0.7.0'
+gem 'money-rails', '~> 1.15'
+gem 'mongoid',             '~> 7.4'
+
+gem 'nokogiri-happymapper'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'pg'
