@@ -34,3 +34,18 @@ jobs:
         run: |
           cd enroll
           bundle install
+  test-bundler-fti:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby_version: ['2.6.3', '2.7.5', '3.0.5', '3.1.4', '3.2.2']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_version }}
+      - name: bundle install
+        run: |
+          cd enroll
+          bundle install
