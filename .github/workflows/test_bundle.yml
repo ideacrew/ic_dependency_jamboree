@@ -1,8 +1,6 @@
 name: Test Bundler
 on:
   workflow_call:
-    branches:
-      - trunk
   workflow_dispatch:
   push:
 
