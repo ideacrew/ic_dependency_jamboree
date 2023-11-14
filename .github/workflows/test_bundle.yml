@@ -76,7 +76,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby_version }}
       - name: bundle install
+        env:
+          BUNDLE_GITHUB__COM: "x-access-token:${{ secrets.GH_PAT }}"
         run: |
-          export BUNDLE_GITHUB__COM=x-access-token:${{ secrets.GH_PAT }}
           cd edi_gateway
           bundle install
