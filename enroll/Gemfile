@@ -13,3 +13,4 @@ gem 'acapi', git: "https://github.com/ideacrew/acapi.git", branch: 'trunk'
 
 # Right now we include, bit by bit, the constraints we *know* will fail.
 gem 'nokogiri', '~> 1.10.8'
+gem 'openhbx_cv2', git:  'https://github.com/ideacrew/openhbx_cv2.git', branch: 'trunk'
