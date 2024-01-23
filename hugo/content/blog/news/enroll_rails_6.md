@@ -75,3 +75,10 @@ It seems that we have several issues here:
 1. This spec set **only** fails once we upgrade the gem versions
 2. It looks like the EventLog is having an issue encoding the session 'left alive' by the previous controller spec, although we have tried a 'sign out' after the controller specs and it didn't seem to work
 3. We've placed multiple DB cleans around all of these specs - should we check and see if db cleaner actually wipes the sessions table?
+
+##### Explanation of the spec failure:
+  1. The `session.id` is no longer an instance of `String`, but an instance of `Rack::Session::SessionId`. Reference: https://github.com/rails/rails/issues/38039
+  2. In the amq-protocol gem, the `TableValueEncoder` class has a `case` statement that handles the encoding of various types of values.  One of the cases is `String`, but there is no case for `Rack::Session::SessionId`. Reference: https://github.com/ruby-amqp/amq-protocol/blob/master/lib/amq/protocol/table_value_encoder.rb#L74
+
+##### Solution to this spec failure:
+  Pass in the `session.id` as a `String` instead of a `Rack::Session::SessionId` instance by using `session.id.to_s` in the Enroll Application in User model to populate `session_id` as part of a setter method 'current_session_values='
