@@ -10,9 +10,10 @@ gem 'aca_x12_entities', git: "https://github.com/ideacrew/aca_x12_entities.git",
 
 # Dependencies from EDI Gateway Gemfile
 gem 'dry-container',       '0.7.2'
-gem 'dry-schema',          '~> 1.6.2'
-gem 'dry-types',           '~> 1.5.1'
-gem 'dry-validation',      '~> 1.6.0'
+gem 'dry-core',            '0.8.1'
+gem 'dry-schema',          '1.6.2'
+gem 'dry-types',           '1.5.1'
+gem 'dry-validation',      '1.6.0'
 
 gem "rails", "~> 7.0.7.2"
 
@@ -20,6 +21,8 @@ gem 'keepr', '~> 0.7.0'
 gem 'money-rails', '~> 1.15'
 gem 'mongoid',             '~> 7.4'
 
-gem 'nokogiri-happymapper'
+gem 'nokogiri-happymapper', '0.9.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'pg'
+
+gem 'nokogiri', '1.16.2'
